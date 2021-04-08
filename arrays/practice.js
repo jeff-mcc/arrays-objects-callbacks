@@ -131,7 +131,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  let l;
+  let evArr = [];
+  let odArr = [];
+  for (l=0;l<numbersArray.length;l++){
+    let val = numbersArray[l];
+    val % 2 === 0 ? evArr.push(val) : odArr.push(val);
+  }
+  let anotherNewArray = [evArr,odArr];
+  return anotherNewArray
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -153,7 +163,12 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(yayarray){
+  let randomNumber = getRandomArbitrary();
+  // let ans = yayarray.includes(randomNumber) ? true : false;
+  // return ans
+  return yayarray.includes(randomNumber)
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -182,8 +197,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList,item){
+  // if (!item===true){
+  //   item = [];
+  // }
+  // if (!myGroceryList===false){
+    let grocIndex = myGroceryList.indexOf(item);
+    grocIndex>-1 ? myGroceryList.splice(grocIndex,1) : '';
+  // }
+  return myGroceryList
+}
 
-
+function addItem(myGroceryList,item){
+  // if (!item===true){
+  //   item = [];
+  // }
+  // if (!myGroceryList===false){
+    myGroceryList.push(item)
+  // }
+  return myGroceryList
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -192,7 +225,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  let n;
+  let numArray = [];
+  for (n=1;n<216;n++){
+    numArray[n-1] = n;
+  }
+  return numArray
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -208,7 +248,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(numbers){
+  let o;
+  for (o=0;o<numbers.length;o++){
+    if (typeof(numbers[o])==="string"){
+      numbers[o] = parseInt(numbers[o])
+    }
+    numbers[o] += 10;
+  }
+  return numbers
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -233,7 +282,11 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1,arr2){
+  let longerArr;
+  arr1>arr2 ? longerArr = arr1 : longerArr = arr2;
+  return longerArr
+}
 
 
 /*
@@ -245,7 +298,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1,arr2){
+  let combinedNUArr = [];
+  let p;
+  for (p=0;p<arr1.length;p++){
+    arr2.includes(arr1[p]) ? combinedNUArr.push(arr1[p]) : '';
+  }
+  return combinedNUArr
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -286,8 +346,11 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees.push(joe,cahlan,ryan,colt);
+// devMountainEmployees.push(cahlan);
+// devMountainEmployees.push(ryan);
+// devMountainEmployees.push(colt);
+// console.log(devMountainEmployees)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -295,8 +358,12 @@ var colt = {
 */
 
 //Code Here
-
-
+let q;
+for (q=0;q<devMountainEmployees.length;q++){
+  if (devMountainEmployees[q].name === "Cahlan"){
+    devMountainEmployees.splice(q,1);
+  }
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -307,7 +374,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = [];
 
 
 /*
@@ -328,8 +395,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
-
+var user2 = {
+    name: 'Joe',
+    email: 'joe@joe.com',
+    password: 'asdf',
+    username: 'usrnm'
+};
+var user3 = {
+    name: 'Dirt',
+    email: 'dirt@dirt.com',
+    password: '1234',
+    username: 'dirty'
+};
+users.push(user1, user2, user3);
+// console.log(users)
 
 /*
   Now you have a very common data structure. 
@@ -342,8 +421,13 @@ var user1 = {
 */
 
 //Code Here
-
-
+let r;
+for (r=0;r<users.length;r++){
+  if (users[r].email==='mark.mciver@devmounta.in'){
+    users.splice(r,1);
+  }
+}
+console.log(users)
 
 /*
   The activity we just did is very much how data works in 'the real world'.
