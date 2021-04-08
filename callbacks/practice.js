@@ -28,6 +28,9 @@
 */
 
 // Code Here 
+let first = function(arr, cbfunc){
+  cbfunc(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+let last = function(arr,cbfunc){
+  cbfunc(arr[arr.length-1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +72,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+let multiply = function(num1,num2,cbfunc){
+  cbfunc(num1*num2);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +94,9 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+let contains = function(arr,nam,cbfunc){
+  return arr.includes(nam) ? cbfunc(true) : cbfunc(false);
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +118,19 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+let uniq = function(arr,cbfunc){
+  let modArr = [];
+  let i;
+  let str = '';
+  for (i=0;i<arr.length;i++){
+    // if (arr.includes(arr[i], i+1)){
+    // } else{
+    //   modArr.push(arr[i]);
+    // }
+    arr.includes(arr[i], i+1) ? str = 'it was true' : modArr.push(arr[i]);
+  }
+  cbfunc(modArr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +148,12 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(namArr, cbfunc){
+  let j;
+  for (j=0;j<namArr.length;j++){
+    cbfunc(namArr[j],j);
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +171,15 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(arrWOb,id,cb){
+  let k;
+  for (k=0;k<arrWOb.length;k++){
+    // if (arrWOb[k].id.includes(id)){
+    //   cb(arrWOb[k]);
+    // }
+    arrWOb[k].id.includes(id) ? cb(arrWOb[k]) : '';
+  }
+}
 
 // Do not edit the code below.
 var users = [
