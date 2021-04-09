@@ -198,24 +198,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList,item){
-  // if (!item===true){
-  //   item = [];
-  // }
-  // if (!myGroceryList===false){
+  if (Boolean(item)){
     let grocIndex = myGroceryList.indexOf(item);
     grocIndex>-1 ? myGroceryList.splice(grocIndex,1) : '';
-  // }
-  return myGroceryList
+    return myGroceryList
+  } else{
+    let mtArr = [];
+    return mtArr
+  } 
 }
 
 function addItem(myGroceryList,item){
-  // if (!item===true){
-  //   item = [];
-  // }
-  // if (!myGroceryList===false){
+  if (Boolean(item)){
     myGroceryList.push(item)
-  // }
-  return myGroceryList
+    return myGroceryList
+  } else{
+    let mtArr = [];
+    return mtArr
+  }
 }
 
 ////////// PROBLEM 9 //////////
